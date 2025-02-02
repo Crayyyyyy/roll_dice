@@ -36,5 +36,4 @@ To get started with the Roll Dice App, follow these steps:
 - Flutter SDK
 - Dart SDK
 
-## Screenshots
 
