@@ -1,16 +1,39 @@
-# roll_dice
+# Roll Dice App
 
-A new Flutter project.
+The Roll Dice App is a simple Flutter application that allows users to roll a virtual dice. This app is designed to demonstrate the basic functionalities of Flutter, including state management, UI design, and random number generation.
+
+## Features
+
+- Roll a virtual dice with a single tap.
+- Display the result of the dice roll.
+- Simple and intuitive user interface.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started with the Roll Dice App, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/roll_dice.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd roll_dice
+    ```
+3. Install the dependencies:
+    ```bash
+    flutter pub get
+    ```
+4. Run the app:
+    ```bash
+    flutter run
+    ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Requirements
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter SDK
+- Dart SDK
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
