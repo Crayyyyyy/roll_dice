@@ -1,3 +1,5 @@
+![App Screenshot](assets/presentation/screen-app.png)
+
 # Roll Dice App
 
 The Roll Dice App is a simple Flutter application that allows users to roll a virtual dice. This app is designed to demonstrate the basic functionalities of Flutter, including state management, UI design, and random number generation.
@@ -36,4 +38,3 @@ To get started with the Roll Dice App, follow these steps:
 
 ## Screenshots
 
-![App Screenshot](assets/presentation/screen-app.png)
