@@ -34,6 +34,6 @@ To get started with the Roll Dice App, follow these steps:
 - Flutter SDK
 - Dart SDK
 
-## License
+## Screenshots
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+![App Screenshot](assets/presentation/screen-app.png)
