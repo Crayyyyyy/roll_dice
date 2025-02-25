@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roll_dice/pages/pageRNG/components/incrementer.dart';
@@ -14,6 +15,9 @@ class PageRNG extends StatefulWidget {
 }
 
 class _PageRNGState extends State<PageRNG> {
+  ConfettiController _confettiController =
+      ConfettiController(duration: Duration(seconds: 3));
+
   int max = 6;
   int min = 1;
   int number = 1;
@@ -29,7 +33,7 @@ class _PageRNGState extends State<PageRNG> {
     });
 
     for (int i = 0; i < 30; i++) {
-      await Future.delayed(const Duration(milliseconds: 20));
+      await Future.delayed(Duration(milliseconds: (i * 5)));
 
       setState(() {
         number = randomizer.nextInt(max - min + 1) + min;
@@ -38,6 +42,7 @@ class _PageRNGState extends State<PageRNG> {
     setState(() {
       isShuffling = false;
     });
+    _confettiController.play();
   }
 
   int setMax(int value) {
@@ -54,16 +59,14 @@ class _PageRNGState extends State<PageRNG> {
 
   @override
   Widget build(BuildContext context) {
-    Widget textNumber = SizedBox(
-      width: 100,
-      child: Align(
-        alignment: Alignment.center,
-        child: Text(
-          number.toString(),
-          style: GoogleFonts.unbounded(
-            fontSize: 72,
-            color: const Color(0xFFedf2f4),
-          ),
+    Widget textNumber = AnimatedSwitcher(
+      duration: const Duration(milliseconds: 100),
+      key: ValueKey<int>(number),
+      child: Text(
+        number.toString(),
+        style: GoogleFonts.unbounded(
+          fontSize: 72,
+          color: const Color(0xFFedf2f4),
         ),
       ),
     );
@@ -85,29 +88,45 @@ class _PageRNGState extends State<PageRNG> {
 
     return Scaffold(
       backgroundColor: const Color(0xFF2b2d42),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      body: SizedBox(
+        width: double.infinity,
+        height: double.infinity,
+        child: Stack(
           children: [
-            Row(
+            Align(
+              alignment: Alignment(0, -0.8),
+              child: ConfettiWidget(
+                numberOfParticles: 50,
+                confettiController: _confettiController,
+                blastDirectionality: BlastDirectionality.explosive,
+                shouldLoop: false,
+                gravity: 0.1,
+              ),
+            ),
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Incrementer(
-                  value: min,
-                  title: "MIN",
-                  parentCallBack: setMin,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Incrementer(
+                      value: min,
+                      title: "MIN",
+                      parentCallBack: setMin,
+                    ),
+                    textNumber,
+                    Incrementer(
+                      value: max,
+                      title: "MAX",
+                      parentCallBack: setMax,
+                    ),
+                  ],
                 ),
-                textNumber,
-                Incrementer(
-                  value: max,
-                  title: "MAX",
-                  parentCallBack: setMax,
-                ),
+                buttonShuffle,
               ],
             ),
-            buttonShuffle,
           ],
         ),
       ),

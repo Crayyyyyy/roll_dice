@@ -29,7 +29,12 @@ class _IncrementerState extends State<Incrementer> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        widget.title == null ? const SizedBox.shrink() : Text(widget.title!),
+        widget.title == null
+            ? const SizedBox.shrink()
+            : Text(
+                widget.title!,
+                style: TextStyle(color: Colors.white),
+              ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

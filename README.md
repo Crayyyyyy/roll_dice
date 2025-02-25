@@ -1,4 +1,4 @@
-![App Screenshot](assets/presentation/screen-app.png)
+You can download and view the video [here](assets/demo.mov).
 
 # Roll Dice App
 
