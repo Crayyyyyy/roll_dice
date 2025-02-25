@@ -1,5 +1,9 @@
-![Demo GIF](assets/demo.gif)
+<p align="center">
+  <img src="assets/demo.gif" alt="Demo GIF">
+</p>
 
+### (in app animation is as smooth as devices fps the reduced quality and framerate in 
+### this demo is limited by .gif format)
 # Roll Dice App
 
 The Roll Dice App is a simple Flutter application that allows users to roll a virtual dice. This app is designed to demonstrate the basic functionalities of Flutter, including state management, UI design, and random number generation.
