@@ -1,4 +1,4 @@
-You can download and view the video [here](assets/demo.mov).
+![Demo GIF](assets/demo.gif)
 
 # Roll Dice App
 
